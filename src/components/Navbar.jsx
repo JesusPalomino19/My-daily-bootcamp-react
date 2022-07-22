@@ -1,6 +1,5 @@
 
 function Navbar(){
-
   return <div className="bg-white sticky top-0 z-10 shadow-lg shadow-[eeeff2]">
           <header className="w-full border-b-1.5 border-blue-700 relative max-w-[1441px] ml-auto mr-auto min-w-[1441px]">
             <nav>
