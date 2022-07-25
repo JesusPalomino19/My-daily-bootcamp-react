@@ -1,6 +1,6 @@
 function Search({ children }) {
   return (
-    <form className=" group  py-3 px-6 flex justify-between w-[622px] focus-within:border-[#1877f2] hover:border-[#1877f2] border-[2px] rounded-lg  cursor-pointer pr-0">
+    <form className=" group  py-3 px-6 flex justify-between w-[622px] focus-within:border-[#1877f2] hover:border-[#1877f2] border-[2px] rounded-lg  cursor-pointer pr-0 bg-white">
       <input
         className="w-full outline-none border-none text-center pointer-events-none font-monserrat text-[15px] text-[#788292]"
         type="text"
@@ -13,9 +13,8 @@ function Search({ children }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="mx-[15px]"
-        fill="none"
       >
-        <g opacity="0.5">
+        <g opacity="1">
           <path
             className="group-hover:stroke-[#1877f2]"
             d="M8.23413 19L8.23413 1.08571"
