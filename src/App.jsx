@@ -35,18 +35,25 @@ function App() {
     setUsers([...infoUsers]);
   };
   return (
-    <div className="bg-gray-400">
+    <div className="bg-[#f1f2f6] flex flex-wrap justify-center gap-10">
       <Navbar />
-      <UserCard />
-      <Search setMostrarModal={setMostrarModal}></Search>{" "}
+      <div className="w-[274px]">
+        <UserCard />
+        <MyTeam users={users} />
+      </div>
+      <div>
+        <Search setMostrarModal={setMostrarModal}></Search>
+        {posts.map((post, index) => {
+          return (
+            <CardsPublications key={index} post={post}></CardsPublications>
+          );
+        })}
+      </div>
+      <div className="w-[363px] h-[100vh] bg-red-500"></div>
       <ModalLearning
         setMostrarModal={setMostrarModal}
         mostrarModal={mostrarModal}
       ></ModalLearning>
-      <MyTeam users={users} />
-      {posts.map((post, index) => {
-        return <CardsPublications key={index} post={post}></CardsPublications>;
-      })}
     </div>
   );
 }
