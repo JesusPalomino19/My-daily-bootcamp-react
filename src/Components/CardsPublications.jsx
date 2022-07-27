@@ -1,62 +1,80 @@
+import React from "react";
+import DeleteButton from "./DeleteButton";
+
 function CardsPublications({ post }) {
-  let profileInfo = post.author
-  let date = formatDate(post.created_at)
-  let description = post.description
-  let urlList = post.images
-  function formatDate (fecha){
-    let date = new Date(fecha)
-    var options = {year: 'numeric', month: 'long', day: 'numeric'}
-    let ultimateFecha = date.toLocaleDateString("es-ES", options)
-    return ultimateFecha
+  let profileInfo = post.author;
+  let date = formatDate(post.created_at);
+  let description = post.description;
+  let urlList = post.images;
+  let id = post.id;
+  function formatDate(fecha) {
+    let date = new Date(fecha);
+    var options = { year: "numeric", month: "long", day: "numeric" };
+    let ultimateFecha = date.toLocaleDateString("es-ES", options);
+    return ultimateFecha;
   }
   switch (urlList.length) {
     case 0:
       return (
-        <Cards description={description} info={profileInfo} date={date}>
-      </Cards>
+        <Cards
+          id={id}
+          description={description}
+          info={profileInfo}
+          date={date}
+        ></Cards>
       );
     case 1:
       return (
-        <Cards description={description} info={profileInfo} date={date}>
+        <Cards id={id} description={description} info={profileInfo} date={date}>
           <GridOnePic list={urlList} />
         </Cards>
       );
     case 2:
       return (
-        <Cards description={description} info={profileInfo} date={date}>
+        <Cards id={id} description={description} info={profileInfo} date={date}>
           <GridTwoPics list={urlList} />
         </Cards>
       );
     case 3:
       return (
-        <Cards description={description} info={profileInfo} date={date}>
+        <Cards id={id} description={description} info={profileInfo} date={date}>
           <GridThreePics list={urlList} />
         </Cards>
       );
   }
 }
-function Cards({ children , description , info , date}) {
+function Cards({ children, description, info, date, id }) {
+  const [showDeleteButton, setShowDeleteButton] = React.useState(false);
   return (
     <div className="relative bg-white rounded-lg mt-2.5 pb-[15px] pt-[15px] pl-[22px] max-w-[622px] mt-[28px]">
       <button className="absolute w-[574px] flex justify-end bg-white w-[582px] border-none mt-[5px] mr-[15px]">
-        <img
-          src="https://my-daily-bootcamp.netlify.app/assets/icons/dots.svg"
-          alt="Menú de Opciones"
-        />
+        <div className="w-[24px] h-[24px] cursor-pointer relative flex justify-center items-center z-10 bg-[#F0F7FF] rounded-[8px] ">
+          <img
+            src="/icons/delete.svg"
+            alt="Menú de Opciones"
+            className=" "
+            onClick={() => {
+              setShowDeleteButton(!showDeleteButton);
+            }}
+          />
+          <DeleteButton
+            showDeleteButton={showDeleteButton}
+            setShowDeleteButton={setShowDeleteButton}
+            id={id}
+          ></DeleteButton>
+        </div>
       </button>
       <div className="flex relative justify-between p-[10px]">
-        <HeaderPart info = {info} date = {date}/>
+        <HeaderPart info={info} date={date} />
       </div>
       <div className="font-monserrat pr-[15px] pb-[20px] text-[14px] text-[#203758]">
-        <p className="w-[585px]">
-          {description}
-        </p>
+        <p className="w-[585px]">{description}</p>
       </div>
       {children}
     </div>
   );
 }
-function HeaderPart({info,date}) {
+function HeaderPart({ info, date }) {
   return (
     <div className="flex gap-[5px]">
       <a className="decoration-none">
