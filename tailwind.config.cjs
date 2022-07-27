@@ -7,5 +7,8 @@ module.exports = {
       monserrat: "'Montserrat', sans-serif",
     },
   },
+  variants: {
+    fill: ["responsive", "hover", "focus", "group-hover"], // this line does the trick
+  },
   plugins: [],
 };
