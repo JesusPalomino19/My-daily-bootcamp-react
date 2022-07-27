@@ -1,8 +1,8 @@
 function Navbar() {
   return (
-    <div className="bg-white sticky top-0  shadow-lg shadow-[eeeff2]  ">
-      <header className="w-full border-b-1.5 border-blue-700 relative max-w-[1441px] ml-auto mr-auto min-w-[1441px]">
-        <nav>
+    <div className="bg-white sticky top-0  shadow-lg shadow-[eeeff2] relative z-10 ">
+      <header className="w-full border-b-1.5 border-blue-700 relative max-w-[100vw] flex justify-center min-w-[100vw]">
+        <nav className=" max-w-[1441px] relative w-[100vw]">
           <ul className="flex justify-center relative">
             <li>
               <a
@@ -23,19 +23,19 @@ function Navbar() {
               </a>
             </li>
           </ul>
+          <div className="flex items-center absolute h-full top-0 left-[62px]">
+            <a className="flex " href="index.html">
+              <img
+                className="mr-2"
+                src="https://my-daily-bootcamp.netlify.app/assets/logo.svg"
+                alt="bootcamp logo"
+              />
+              <h2 className="font-[Montserrat] font-[700] text-[18px] leading-[22px] text-[#203758]">
+                My Daily Bootcamp
+              </h2>
+            </a>
+          </div>
         </nav>
-        <div className="flex items-center absolute h-full top-0 left-[62px]">
-          <a className="flex " href="index.html">
-            <img
-              className="mr-2"
-              src="https://my-daily-bootcamp.netlify.app/assets/logo.svg"
-              alt="bootcamp logo"
-            />
-            <h2 className="font-[Montserrat] font-[700] text-[18px] leading-[22px] text-[#203758]">
-              My Daily Bootcamp
-            </h2>
-          </a>
-        </div>
       </header>
     </div>
   );

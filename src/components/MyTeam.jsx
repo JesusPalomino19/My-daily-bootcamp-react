@@ -4,7 +4,7 @@ function MyTeam({ users }) {
       <h2 className="mb-[20px] text-[#203758] text-[17px] font-[700] font-monserrat">
         My team
       </h2>
-      <div className="items-left flex flex-col w-[274px] h-max bg-red-600 rounded-[10px] gap-y-[2px] overflow-hidden">
+      <div className="items-left flex flex-col w-[274px] h-max rounded-[10px] gap-y-[2px] overflow-hidden">
         {users.map(function (user, index) {
           return <UserPart key={index} user={user} />;
         })}
