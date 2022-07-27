@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import UserCard from "./Components/UserCard";
 import MyTeam from "./Components/MyTeam";
 import CardsPublications from "./Components/CardsPublications";
-import React, { useEffect } from "react";
 import Search from "./Components/Search";
 import ModalLearning from "./Components/ModalLearning/ModalLearning";
 
 function App() {
-  const [posts, setPosts] = React.useState([]);
-  const [mostrarModal, setMostrarModal] = React.useState(false);
+  const [posts, setPosts] = useState([]);
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   useEffect(() => {
     obtenerDatos();
@@ -21,7 +20,6 @@ function App() {
       "https://my-daily-bootcamp.herokuapp.com/posts.json"
     );
     const infoPost = await post.json();
-    console.log(infoPost);
     setPosts([...infoPost]);
   };
   return (
