@@ -22,18 +22,30 @@ function App() {
     const infoPost = await post.json();
     setPosts([...infoPost]);
   };
+  const [users, setUsers] = React.useState([]);
+  useEffect(() => {
+    obtenerUsers();
+  }, []);
+  const obtenerUsers = async () => {
+    const user = await fetch(
+      "https://my-daily-bootcamp.herokuapp.com/users.json"
+    );
+    const infoUsers = await user.json();
+    // console.log(infoUsers);
+    setUsers([...infoUsers]);
+  };
   return (
     <div className="bg-gray-400">
       <Navbar />
       <UserCard />
-      <MyTeam />
       <Search setMostrarModal={setMostrarModal}></Search>{" "}
       <ModalLearning
         setMostrarModal={setMostrarModal}
         mostrarModal={mostrarModal}
       ></ModalLearning>
-      {posts.map((post) => {
-        return <CardsPublications post={post}></CardsPublications>;
+      <MyTeam users={users} />
+      {posts.map((post, index) => {
+        return <CardsPublications key={index} post={post}></CardsPublications>;
       })}
     </div>
   );

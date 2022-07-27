@@ -8,6 +8,7 @@ function ButtonsBox({
   setFiles,
   setMostrarModal,
   calculateLocation,
+  location,
 }) {
   const sendPost = async () => {
     let post = {};
@@ -90,7 +91,9 @@ function ButtonsBox({
           ></img>
         </div>
         <button
-          className="button-location w-[44px] h-[44px] flex justify-center items-center hover:bg-[#f0f7ff] rounded-[8px]"
+          className={`button-location w-[44px] h-[44px] flex justify-center items-center hover:bg-[#f0f7ff] rounded-[8px] ${
+            location ? "bg-[#f0f7ff]" : ""
+          }`}
           onClick={calculateLocation}
         >
           <img src="/icons/location-icon.svg" alt="" />

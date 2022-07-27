@@ -51,7 +51,6 @@ function MainBox({ setImageURLs, setMostrarModal, files, setFiles }) {
     );
 
     let responseJson = await response.json();
-    console.log(responseJson);
     let { town, country } = responseJson.address;
     let location = " " + town + ", " + country;
     localStorage.setItem("location", location);
@@ -110,6 +109,7 @@ function MainBox({ setImageURLs, setMostrarModal, files, setFiles }) {
         files={files}
         setMostrarModal={setMostrarModal}
         calculateLocation={calculateLocation}
+        location={location}
       ></ButtonsBox>
     </div>
   );
