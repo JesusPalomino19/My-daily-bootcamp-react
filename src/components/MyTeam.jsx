@@ -9,7 +9,7 @@ function MyTeam() {
           <a className=" flex gap-[10px] content-center items-center" href="#">
             <img
               className="rounded-[50px] border-2 border-white shadow-lg hover:border-[#1877f2]"
-              src="http://127.0.0.1:5500/assets/team/team-1.jpg"
+              src="https://my-daily-bootcamp.netlify.app/assets/team/team-1.jpg"
               alt="Alden Cantrell"
             />
             <p className="text-[13px] text-[#788292] text-center content-center hover:text-[#1877f2]">
@@ -21,7 +21,7 @@ function MyTeam() {
           <a className=" flex gap-[10px] content-center items-center" href="#">
             <img
               className="rounded-[50px] border-2 border-white shadow-lg hover:border-[#1877f2]"
-              src="http://127.0.0.1:5500/assets/team/team-2.jpg"
+              src="https://my-daily-bootcamp.netlify.app/assets/team/team-2.jpg"
               alt="Thomas Crane"
             />
             <p className="text-[13px] text-[#788292] text-center content-center hover:text-[#1877f2]">
@@ -33,7 +33,7 @@ function MyTeam() {
           <a className=" flex gap-[10px] content-center items-center" href="#">
             <img
               className="rounded-[50px] border-2 border-white shadow-lg hover:border-[#1877f2]"
-              src="http://127.0.0.1:5500/assets/team/team-3.jpg"
+              src="https://my-daily-bootcamp.netlify.app/assets/team/team-3.jpg"
               alt="Miranda Shaffer"
             />
             <p className="text-[13px] text-[#788292] text-center content-center hover:text-[#1877f2]">
@@ -45,7 +45,7 @@ function MyTeam() {
           <a className=" flex gap-[10px] content-center items-center" href="#">
             <img
               className="rounded-[50px] border-2 border-white shadow-lg hover:border-[#1877f2]"
-              src="http://127.0.0.1:5500/assets/team/team-4.jpg"
+              src="https://my-daily-bootcamp.netlify.app/assets/team/team-4.jpg"
               alt="Alvaro Mcgee"
             />
             <p className="text-[13px] text-[#788292] text-center content-center hover:text-[#1877f2]">
