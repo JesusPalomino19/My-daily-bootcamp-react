@@ -17,7 +17,7 @@ function ButtonsBox({
     for (let f of files) {
       post.images.push(await createUrlImage(f));
     }
-    post.user_id = 1;
+    post.user_id = 3;
 
     await fetch("https://my-daily-bootcamp.herokuapp.com/posts.json?", {
       method: "POST",
