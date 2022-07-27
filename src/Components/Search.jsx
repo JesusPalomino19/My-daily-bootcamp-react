@@ -1,6 +1,14 @@
-function Search({ children }) {
+import React from "react";
+
+function Search({ setMostrarModal }) {
+  // PostsApi();
   return (
-    <form className=" group  py-3 px-6 flex justify-between w-[622px] focus-within:border-[#1877f2] hover:border-[#1877f2] border-[2px] rounded-lg  cursor-pointer pr-0 bg-white">
+    <form
+      className=" group  py-3 px-6 flex justify-between w-[622px] focus-within:border-[#1877f2] hover:border-[#1877f2] border-[2px] rounded-lg  cursor-pointer pr-0 bg-white"
+      onClick={() => {
+        setMostrarModal(true);
+      }}
+    >
       <input
         className="w-full outline-none border-none text-center pointer-events-none font-monserrat text-[15px] text-[#788292]"
         type="text"
@@ -30,5 +38,17 @@ function Search({ children }) {
     </form>
   );
 }
-
+const PostsApi = () => {
+  const [datosApi, setDatosApi] = React.useState([]);
+  React.useEffect(() => {
+    obtenerDatos();
+  }, []);
+  const obtenerDatos = async () => {
+    let post = await fetch(
+      "https://my-daily-bootcamp.herokuapp.com/posts.json"
+    );
+    let infoPost = await post.json();
+    console.log(infoPost);
+  };
+};
 export default Search;
