@@ -17,6 +17,16 @@ function App() {
     console.log(infoPost);
     setPosts([...infoPost]);
   }
+  const [users, setUsers] = React.useState([]);
+  useEffect(() => {
+    obtenerUsers();
+  }, []);
+  const obtenerUsers = async () => {
+    const user = await fetch("https://my-daily-bootcamp.herokuapp.com/users.json");
+    const infoUsers = await user.json();
+    console.log(infoUsers);
+    setUsers([...infoUsers]);
+  }
   return (
     <div className="bg-gray-400">
       <Navbar />
