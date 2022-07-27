@@ -24,14 +24,14 @@ function App() {
   const obtenerUsers = async () => {
     const user = await fetch("https://my-daily-bootcamp.herokuapp.com/users.json");
     const infoUsers = await user.json();
-    console.log(infoUsers);
+    // console.log(infoUsers);
     setUsers([...infoUsers]);
   }
   return (
     <div className="bg-gray-400">
       <Navbar />
       <UserCard />
-      <MyTeam/>
+      <MyTeam users={users}/>
       {posts.map ((post)=>{
         return <CardsPublications post={post}>
         </CardsPublications>
