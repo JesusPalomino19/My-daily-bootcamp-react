@@ -7,11 +7,12 @@ import MyTeam from "./Components/MyTeam";
 import CardsPublications from "./Components/CardsPublications";
 import Search from "./Components/Search";
 import ModalLearning from "./Components/ModalLearning/ModalLearning";
+import DeleteModal from "./Components/DeleteModal";
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [mostrarModal, setMostrarModal] = useState(false);
-
+  const [idDelete, setIdDelete] = useState(null);
   useEffect(() => {
     obtenerDatos();
   }, []);
@@ -45,7 +46,11 @@ function App() {
         <Search setMostrarModal={setMostrarModal}></Search>
         {posts.map((post, index) => {
           return (
-            <CardsPublications key={index} post={post}></CardsPublications>
+            <CardsPublications
+              key={index}
+              post={post}
+              setIdDelete={setIdDelete}
+            ></CardsPublications>
           );
         })}
       </div>
@@ -54,6 +59,7 @@ function App() {
         setMostrarModal={setMostrarModal}
         mostrarModal={mostrarModal}
       ></ModalLearning>
+      <DeleteModal idDelete={idDelete} setIdDelete={setIdDelete}></DeleteModal>
     </div>
   );
 }
