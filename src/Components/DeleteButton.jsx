@@ -1,17 +1,18 @@
-function DeleteButton({ setShowDeleteButton, showDeleteButton, id }) {
-  const deletePost = async () => {
-    await fetch(`https://my-daily-bootcamp.herokuapp.com/posts/${id}.json?`, {
-      method: "DELETE",
-      body: id,
-    });
-    location.href = "/";
-  };
+function DeleteButton({
+  showDeleteButton,
+  setShowDeleteButton,
+  id,
+  setIdDelete,
+}) {
   return (
     <div
       className={`${
         showDeleteButton ? "" : "hidden"
       } group absolute left-[-85px] bottom-[-155%] drop-shadow-md bg-white text-[11px] font-monserrat font-bold w-[111px] h-[32px] rounded-[8px] flex items-center justify-center `}
-      onClick={deletePost}
+      onClick={() => {
+        setShowDeleteButton(false);
+        setIdDelete(id);
+      }}
     >
       <button className="flex w-[103px] h-[24px] items-center group-hover:bg-[#F0F7FF] rounded-[8px]">
         <svg

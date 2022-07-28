@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteButton from "./DeleteButton";
 
-function CardsPublications({ post }) {
+function CardsPublications({ post, setIdDelete }) {
   let profileInfo = post.author;
   let date = formatDate(post.created_at);
   let description = post.description;
@@ -21,30 +21,50 @@ function CardsPublications({ post }) {
           description={description}
           info={profileInfo}
           date={date}
+          setIdDelete={setIdDelete}
         ></Cards>
       );
     case 1:
       return (
-        <Cards id={id} description={description} info={profileInfo} date={date}>
+        <Cards
+          setIdDelete={setIdDelete}
+          id={id}
+          description={description}
+          info={profileInfo}
+          date={date}
+        >
           <GridOnePic list={urlList} />
         </Cards>
       );
     case 2:
       return (
-        <Cards id={id} description={description} info={profileInfo} date={date}>
+        <Cards
+          setIdDelete={setIdDelete}
+          id={id}
+          description={description}
+          info={profileInfo}
+          date={date}
+        >
           <GridTwoPics list={urlList} />
         </Cards>
       );
     case 3:
       return (
-        <Cards id={id} description={description} info={profileInfo} date={date}>
+        <Cards
+          setIdDelete={setIdDelete}
+          id={id}
+          description={description}
+          info={profileInfo}
+          date={date}
+        >
           <GridThreePics list={urlList} />
         </Cards>
       );
   }
 }
-function Cards({ children, description, info, date, id }) {
+function Cards({ children, description, info, date, id, setIdDelete }) {
   const [showDeleteButton, setShowDeleteButton] = React.useState(false);
+
   return (
     <div className="relative bg-white rounded-lg mt-2.5 pb-[15px] pt-[15px] pl-[22px] max-w-[622px] mt-[28px]">
       <button className="absolute w-[574px] flex justify-end bg-white w-[582px] border-none mt-[5px] mr-[15px]">
@@ -60,6 +80,7 @@ function Cards({ children, description, info, date, id }) {
           <DeleteButton
             showDeleteButton={showDeleteButton}
             setShowDeleteButton={setShowDeleteButton}
+            setIdDelete={setIdDelete}
             id={id}
           ></DeleteButton>
         </div>
